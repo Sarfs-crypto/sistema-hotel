@@ -1,7 +1,3 @@
-"""
-UTILS: Funciones de validación y utilidades
-"""
-
 from datetime import datetime
 
 
