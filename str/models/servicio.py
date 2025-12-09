@@ -1,8 +1,3 @@
-"""
-MODELO: Servicios Adicionales del Hotel
-Implementa servicios de restaurante, spa, lavandería y room service
-"""
-
 from abc import ABC, abstractmethod
 from datetime import datetime
 from typing import List
@@ -21,7 +16,6 @@ class ServicioHotel(ABC):
         # Atributo protegido
         self._horario_disponible = "07:00-22:00"  # Horario por defecto
     
-    # ========== METODOS ABSTRACTOS ==========
     @abstractmethod
     def calcular_costo(self) -> float:
         """Calcula costo del servicio (POLIMORFISMO)"""
@@ -32,7 +26,6 @@ class ServicioHotel(ABC):
         """Retorna tiempo estimado del servicio (POLIMORFISMO)"""
         pass
     
-    # ========== METODOS CONCRETOS ==========
     def registrar_solicitud(self, fecha_hora: str = None):
         """Registra la fecha y hora de la solicitud"""
         if fecha_hora:
@@ -40,7 +33,6 @@ class ServicioHotel(ABC):
         else:
             self.__fecha_solicitud = datetime.now().strftime("%Y-%m-%d %H:%M")
     
-    # ========== METODOS PRIVADOS ==========
     def __aplicar_recargo_nocturno(self, costo_base: float, hora: str) -> float:
         """Aplica recargo por servicio nocturno (ENCAPSULAMIENTO)"""
         try:
@@ -52,7 +44,6 @@ class ServicioHotel(ABC):
             pass
         return costo_base
     
-    # ========== GETTERS Y SETTERS ==========
     @property
     def codigo_servicio(self) -> str:
         return self.__codigo_servicio
