@@ -1,8 +1,3 @@
-"""
-SERVICIO: Lógica principal del hotel
-Maneja operaciones CRUD y coordinación entre módulos
-"""
-
 from models.habitacion import *
 from models.reserva import *
 from models.servicio import *
@@ -104,7 +99,6 @@ class HotelService:
                 "Tour Ciudad", True, 3, True
             ))
     
-    # ========== OPERACIONES CRUD HABITACIONES ==========
     def obtener_habitaciones_disponibles(self):
         """Retorna lista de habitaciones disponibles"""
         return [h for h in self.habitaciones if h.estado == "disponible"]
@@ -148,7 +142,6 @@ class HotelService:
         
         return reserva
     
-    # ========== REPORTES ==========
     def generar_reporte_ocupacion(self):
         """Genera reporte de ocupación por tipo"""
         reporte = {}
