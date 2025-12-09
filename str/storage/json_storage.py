@@ -1,8 +1,3 @@
-"""
-STORAGE: Manejo de persistencia de datos en JSON
-Guardar y cargar información del hotel
-"""
-
 import json
 import os
 from datetime import datetime
