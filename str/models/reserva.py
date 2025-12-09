@@ -1,8 +1,3 @@
-"""
-MODELO: Sistema de Reservas y Huéspedes
-Implementa reservas individuales, grupales, corporativas y paquetes turísticos
-"""
-
 from abc import ABC, abstractmethod
 from datetime import datetime, timedelta
 from typing import List
@@ -21,7 +16,6 @@ class Reserva(ABC):
         # Atributo protegido
         self._huespedes = []  # Lista de huéspedes
     
-    # ========== METODOS ABSTRACTOS ==========
     @abstractmethod
     def calcular_costo_total(self) -> float:
         """Calcula costo total de la reserva (POLIMORFISMO)"""
@@ -32,12 +26,10 @@ class Reserva(ABC):
         """Retorna política de cancelación (POLIMORFISMO)"""
         pass
     
-    # ========== METODOS CONCRETOS ==========
     def agregar_huesped(self, huesped: str):
         """Agrega un huésped a la reserva"""
         self._huespedes.append(huesped)
     
-    # ========== METODOS PRIVADOS ==========
     def __calcular_noches(self) -> int:
         """Calcula número de noches de la reserva (ENCAPSULAMIENTO)"""
         try:
@@ -47,7 +39,6 @@ class Reserva(ABC):
         except ValueError:
             return 1  # Valor por defecto si hay error en fechas
     
-    # ========== GETTERS Y SETTERS ==========
     @property
     def codigo_reserva(self) -> str:
         return self.__codigo_reserva
