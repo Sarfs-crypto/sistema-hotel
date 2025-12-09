@@ -1,8 +1,3 @@
-"""
-UI: Interfaz de usuario del sistema hotelero
-Menús y presentación de información
-"""
-
 class SistemaHotelMenu:
     """Clase que maneja todos los menús del sistema"""
     
