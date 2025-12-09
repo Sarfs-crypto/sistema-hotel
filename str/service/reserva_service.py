@@ -1,7 +1,3 @@
-"""
-SERVICES: Lógica específica para gestión de reservas
-"""
-
 from models.reserva import *
 from datetime import datetime
 
