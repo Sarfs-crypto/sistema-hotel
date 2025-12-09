@@ -1,7 +1,3 @@
-"""
-SERVICES: Generación de reportes y estadísticas
-"""
-
 from datetime import datetime
 from utils.validaciones import formatear_dinero
 
