@@ -1,8 +1,3 @@
-"""
-MODELO: Personal y Departamentos del Hotel
-Implementa recepcionistas, housekeeping, mantenimiento y gerentes
-"""
-
 from abc import ABC, abstractmethod
 from datetime import datetime
 from typing import List
@@ -21,7 +16,7 @@ class EmpleadoHotel(ABC):
         # Atributo protegido
         self._evaluaciones = []  # Historial de evaluaciones
     
-    # ========== METODOS ABSTRACTOS ==========
+  
     @abstractmethod
     def calcular_salario_mensual(self) -> float:
         """Calcula salario mensual con bonos (POLIMORFISMO)"""
@@ -42,7 +37,7 @@ class EmpleadoHotel(ABC):
         }
         self._evaluaciones.append(evaluacion)
     
-    # ========== METODOS PRIVADOS ==========
+
     def __calcular_bono_desempeño(self) -> float:
         """Calcula bono por desempeño basado en evaluaciones (ENCAPSULAMIENTO)"""
         if not self._evaluaciones:
@@ -61,7 +56,7 @@ class EmpleadoHotel(ABC):
         
         return 0
     
-    # ========== GETTERS Y SETTERS ==========
+  
     @property
     def nombre(self) -> str:
         return self.__nombre
