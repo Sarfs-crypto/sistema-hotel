@@ -1,8 +1,3 @@
-"""
-MODELO: Gestión de Habitaciones
-Implementa la jerarquía de habitaciones con los 4 pilares de POO
-"""
-
 from abc import ABC, abstractmethod
 from datetime import datetime
 
@@ -21,7 +16,7 @@ class Habitacion(ABC):
         self._servicios_incluidos = []
         self._historial_huespedes = []
     
-    # ========== METODOS ABSTRACTOS ==========
+
     @abstractmethod
     def calcular_tarifa_noche(self) -> float:
         """Calcula tarifa por noche (POLIMORFISMO)"""
@@ -32,7 +27,6 @@ class Habitacion(ABC):
         """Retorna capacidad máxima"""
         pass
     
-    # ========== METODOS CONCRETOS ==========
     def cambiar_estado(self, nuevo_estado: str):
         """Cambia el estado de la habitación"""
         estados_validos = ["disponible", "ocupada", "limpieza", "mantenimiento"]
@@ -50,12 +44,10 @@ class Habitacion(ABC):
         }
         self._historial_huespedes.append(registro)
     
-    # ========== METODOS PRIVADOS ==========
     def __calcular_impuestos(self, subtotal: float) -> float:
         """Calcula impuestos (método privado)"""
         return subtotal * 0.24
     
-    # ========== GETTERS Y SETTERS ==========
     @property
     def numero(self) -> int:
         return self.__numero
